@@ -35,7 +35,7 @@ def fill_missing_with_median(df):
     for column in df.columns:
         if df[column].isnull().any():  # Check if there are missing values
             median_value = df[column].median()  # Calculate the median for the column
-            df[column].fillna(median_value, inplace=True)  # Fill missing values with the median
+            df[column] = df[column].fillna(median_value)  # Fill missing values with the median
     return df
 
 # Preprocess training and testing data to fill missing values
